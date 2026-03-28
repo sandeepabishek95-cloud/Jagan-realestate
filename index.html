@@ -1,84 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soundaramoorthy Real Estates Chennai Pvt Limited</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Premium Estates | Vision 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
-<body>
+<body class="dark-theme">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="IMG_1751.jpeg" alt="Logo">
-    <span>Soundaramoorthy Real Estates</span>
-  </div>
+    <nav class="glass-nav">
+        <div class="logo">CHENNAI<span>PRIME</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#listings">Villas</a></li>
+            <li><a href="locations/adyar.html">Explore Chennai</a></li>
+        </ul>
+    </nav>
 
-  <div class="nav-actions">
-    <a href="tel:+917010022388">📞 Call</a>
-    <a href="blog.html">Blog</a>
-  </div>
-</nav>
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Experience Luxury.</h1>
+            <p>Premium Land & Villas across Chennai's elite corridors.</p>
+            <a href="#listings" class="btn-audi">View Collection</a>
+        </div>
+    </section>
 
-<!-- HERO -->
-<header class="hero">
-  <h1>Premium Properties in Chennai</h1>
-  <p>Find your dream home with trusted real estate experts</p>
-</header>
+    <section id="listings" class="container">
+        <h2 class="section-title">Exclusive Ads</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="card-body">
+                    <span class="tag">VILLA</span>
+                    <h3>The ECR Beach House</h3>
+                    <p>Modern architecture meets coastal serenity.</p>
+                    <button class="btn-outline" onclick="showMap(12.948, 80.239)">Locate</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- PROPERTIES SECTION -->
-<section class="section">
-  <h2>Featured Properties</h2>
+    <div id="map" class="map-frame reveal"></div>
 
-  <div id="property-cards" class="cards">
-    <!-- Cards loaded from main.js -->
-  </div>
-</section>
-
-<!-- ABOUT SECTION -->
-<section class="section">
-  <h2>Why Choose Us</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Verified Listings</h3>
-      <p>All properties are verified and curated for quality and trust.</p>
-    </div>
-
-    <div class="card">
-      <h3>Prime Locations</h3>
-      <p>We focus on the best areas in Chennai for investment and living.</p>
-    </div>
-
-    <div class="card">
-      <h3>Transparent Deals</h3>
-      <p>No hidden charges. Clear pricing and full support.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA SECTION -->
-<section class="section">
-  <div class="card">
-    <h3>Looking to Buy or Sell Property?</h3>
-    <p>Contact us today and get expert guidance.</p>
-    <a href="tel:+917010022388" class="card-btn">Call Now</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © Soundaramoorthy Real Estates Chennai Pvt Limited
-</footer>
-
-<!-- JS -->
-<script src="main.js"></script>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
