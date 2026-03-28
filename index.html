@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chennai Premium Estates | Vision 2025</title>
+    <title>Chennai Prime | Luxury Real Estate</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="Chennai Prime | Luxury Villas & Plots">
+    <meta property="og:description" content="Explore the most exclusive real estate listings in Chennai with Audi-inspired design.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1000">
 </head>
 <body class="dark-theme">
 
@@ -14,35 +20,72 @@
         <div class="logo">CHENNAI<span>PRIME</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#listings">Villas</a></li>
-            <li><a href="locations/adyar.html">Explore Chennai</a></li>
+            <li><a href="#listings">Listings</a></li>
+            <li><a href="locations/adyar.html">Heritage</a></li>
+            <li><a href="contact.html">Inquire</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content fade-in">
-            <h1>Experience Luxury.</h1>
-            <p>Premium Land & Villas across Chennai's elite corridors.</p>
-            <a href="#listings" class="btn-audi">View Collection</a>
+        <div class="hero-content reveal active">
+            <span class="tag-gold">ESTABLISHED 2025</span>
+            <h1>The New Standard of Chennai Luxury.</h1>
+            <p>Exclusive Land, Villas, and Estates curated for the visionaries.</p>
+            <div style="margin-top: 30px;">
+                <a href="#listings" class="btn-audi">View Collection</a>
+            </div>
         </div>
     </section>
 
     <section id="listings" class="container">
-        <h2 class="section-title">Exclusive Ads</h2>
+        <div style="padding: 60px 6% 0;">
+            <span class="tag-blue">FEATURED ADVERTISEMENTS</span>
+            <h2 style="font-size: 2.5rem; letter-spacing: -1px;">Current Opportunities</h2>
+        </div>
+
         <div class="grid">
             <div class="card reveal">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80')"></div>
                 <div class="card-body">
-                    <span class="tag">VILLA</span>
-                    <h3>The ECR Beach House</h3>
-                    <p>Modern architecture meets coastal serenity.</p>
-                    <button class="btn-outline" onclick="showMap(12.948, 80.239)">Locate</button>
+                    <span class="tag-gold">VILLA · ECR</span>
+                    <h3>The Azure Coast Estate</h3>
+                    <p>Experience breathtaking sea views and ultra-modern architecture in the heart of East Coast Road.</p>
+                    <button class="btn-audi" style="padding: 12px 25px; font-size: 0.7rem;" onclick="showMap(12.848, 80.239)">View Location</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="card-body">
+                    <span class="tag-blue">LAND · OMR</span>
+                    <h3>Tech-Corridor Premium Plot</h3>
+                    <p>Strategically located near Tidel Park. Perfect for high-yield residential development.</p>
+                    <button class="btn-audi" style="padding: 12px 25px; font-size: 0.7rem;" onclick="showMap(12.947, 80.226)">View Location</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="card-body">
+                    <span class="tag-gold">HERITAGE · ADYAR</span>
+                    <h3>The Gandhi Nagar Bungalow</h3>
+                    <p>A rare piece of history. A classic sprawling estate in Chennai's most elite neighborhood.</p>
+                    <button class="btn-audi" style="padding: 12px 25px; font-size: 0.7rem;" onclick="showMap(13.006, 80.257)">View Location</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="map" class="map-frame reveal"></div>
+    <section class="reveal">
+        <div style="padding: 0 6%;">
+            <h3 style="margin-bottom: 20px; font-weight: 300;">Explore the Chennai Corridor</h3>
+        </div>
+        <div id="map"></div>
+    </section>
+
+    <footer style="padding: 60px 6%; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; opacity: 0.5; font-size: 0.8rem;">
+        <p>&copy; 2026 CHENNAI PRIME REAL ESTATE. DESIGNED FOR IPHONE 17.</p>
+    </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
