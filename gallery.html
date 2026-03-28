@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Collection | Sounderamoorthy Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <nav class="glass-nav">
+        <div class="logo">SOUNDERAMOORTHY<span> ESTATES</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="btn-back">← Home</a>
+        </div>
+    </nav>
+
+    <header style="padding: 140px 6% 40px; background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);">
+        <span class="tag-gold">CURATED INVENTORY</span>
+        <h1 style="font-size: 3rem; letter-spacing: -2px;">The Chennai Portfolio</h1>
+        <p style="color: var(--text-dim); max-width: 600px; margin-top: 10px;">Select a property to view technical specifications, owner contact, and acquisition procedures.</p>
+    </header>
+
+    <section class="grid">
+        <div class="card reveal" onclick="openDetails('The Adyar Gate Residence', '₹12.5 Cr', '5200 SQFT', 'New Construction', '919876543210', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811', 'Boat Club Road')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811')"></div>
+            <div class="card-body">
+                <span class="tag-gold">ULTRA-LUXURY</span>
+                <h3>Boat Club Residence</h3>
+                <p>₹12.5 Crores</p>
+                <button class="btn-audi" style="padding: 10px 20px; font-size: 0.7rem; margin-top: 15px;">VIEW DETAILS</button>
+            </div>
+        </div>
+
+        <div class="card reveal" onclick="openDetails('Legacy Manor', '₹18.0 Cr', '6000 SQFT', 'Heritage Restored', '919876543211', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750', 'Poes Garden')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750')"></div>
+            <div class="card-body">
+                <span class="tag-gold">HERITAGE ESTATES</span>
+                <h3>Poes Garden Manor</h3>
+                <p>₹18.0 Crores</p>
+                <button class="btn-audi" style="padding: 10px 20px; font-size: 0.7rem; margin-top: 15px;">VIEW DETAILS</button>
+            </div>
+        </div>
+
+        <div class="card reveal" onclick="openDetails('Shoreline Penthouse', '₹4.2 Cr', '3100 SQFT', '3 Years', '919876543212', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c', 'Besant Nagar')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"></div>
+            <div class="card-body">
+                <span class="tag-blue">COASTAL LIVING</span>
+                <h3>Besant Nagar Penthouse</h3>
+                <p>₹4.2 Crores</p>
+                <button class="btn-audi" style="padding: 10px 20px; font-size: 0.7rem; margin-top: 15px;">VIEW DETAILS</button>
+            </div>
+        </div>
+
+        <div class="card reveal" onclick="openDetails('Azure Bay Villa', '₹6.8 Cr', '4800 SQFT', 'Under Construction', '919876543213', 'https://images.unsplash.com/photo-1512918766775-d56aabc28644', 'Kanathur, ECR')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512918766775-d56aabc28644')"></div>
+            <div class="card-body">
+                <span class="tag-blue">VILLA</span>
+                <h3>Azure Bay (ECR)</h3>
+                <p>₹6.8 Crores</p>
+                <button class="btn-audi" style="padding: 10px 20px; font-size: 0.7rem; margin-top: 15px;">VIEW DETAILS</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="propModal" class="modal">
+        <div class="modal-content reveal active">
+            <span class="close-modal" onclick="closeDetails()">&times;</span>
+            <div id="modalImg" style="height: 350px; background-size: cover; background-position: center;"></div>
+            
+            <div class="modal-grid">
+                <div>
+                    <h2 id="modalName" style="color: var(--gold); font-size: 2rem;">Property Name</h2>
+                    <p id="modalLocation" style="opacity: 0.6; letter-spacing: 2px; margin-bottom: 10px;">Location</p>
+                    <p id="modalPrice" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 25px;">Price</p>
+                    
+                    <div class="detail-tag"><strong>DIMENSIONS:</strong> <span id="modalSqft"></span></div>
+                    <div class="detail-tag"><strong>AGE:</strong> <span id="modalAge"></span></div>
+                    <div class="detail-tag"><strong>STATUS:</strong> Verified Title</div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.02); padding: 30px; border: 1px solid var(--glass-border);">
+                    <h3 style="letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px; color: var(--gold);">PROCESS & PROCEDURE</h3>
+                    <ul class="luxury-list" style="font-size: 0.8rem;">
+                        <li>1. KYC & Financial Pre-Approval</li>
+                        <li>2. Physical Site Inspection</li>
+                        <li>3. Legal Due Diligence & Encumbrance Check</li>
+                        <li>4. Draft Agreement for Sale (ATS)</li>
+                        <li>5. Final Registration at Sub-Registrar Office</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px; font-size: 0.9rem;">ACQUISITION INQUIRY</h3>
+                    <a id="ownerLink" href="#" class="btn-audi" style="display: block; text-align: center; margin-top: 15px; background: var(--whatsapp); color: white; border: none;">Contact via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDetails(name, price, sqft, age, phone, img, loc) {
+            document.getElementById('propModal').style.display = 'flex';
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalLocation').innerText = loc;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalSqft').innerText = sqft;
+            document.getElementById('modalAge').innerText = age;
+            document.getElementById('modalImg').style.backgroundImage = "url('" + img + "')";
+            document.getElementById('ownerLink').href = "https://wa.me/" + phone + "?text=I am interested in " + name;
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeDetails() {
+            document.getElementById('propModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('propModal')) {
+                closeDetails();
+            }
+        }
+    </script>
+</body>
+</html>
