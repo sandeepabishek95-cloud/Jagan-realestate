@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Details</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="btn">⬅ Back</a>
+  <div class="nav-actions">
+    <a href="tel:+917010022388" class="call-btn">📞</a>
+    <a href="https://wa.me/917010022388" class="wa-btn">💬</a>
+  </div>
+</nav>
+
+<section class="section" id="property-details">
+  <h2 id="prop-title"></h2>
+  <div class="cards" id="prop-carousel">
+    <!-- Images populated by JS -->
+  </div>
+  <div class="tabs">
+    <button class="tab-btn" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="amenities">Amenities</button>
+    <button class="tab-btn" data-tab="parking">Parking</button>
+    <button class="tab-btn" data-tab="map">Map</button>
+  </div>
+  <div class="tab-content" id="tab-content">
+    <!-- Tab content populated by JS -->
+  </div>
+</section>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="property.js"></script>
+</body>
+</html>
