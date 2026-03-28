@@ -3,23 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sounderamoorthy Real Estate | Luxury Chennai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>The Portfolio | Sounderamoorthy Real Estate</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
-
+<body>
     <nav class="glass-nav">
         <div class="logo">SOUNDERAMOORTHY<span> ESTATES</span></div>
+        <a href="index.html" class="btn-back">← HOME</a>
     </nav>
 
-    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), #0a0a0a), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200');">
-        <div class="hero-content">
-            <span style="letter-spacing: 5px; color: #d4af37;">PREMIUM ADVISORY</span>
-            <h1 style="font-size: 4rem; margin: 20px 0;">Curating Chennai's Finest.</h1>
-            <a href="gallery.html" class="btn-audi">Explore Collection</a>
+    <header style="padding: 140px 6% 20px;">
+        <span class="tag-gold">PRIVATE INVENTORY</span>
+        <h2 style="font-size: 2.5rem; letter-spacing: -1px;">The 2026 Collection</h2>
+    </header>
+
+    <section class="grid">
+        <div class="card" onclick="openPop('Adyar Gate Residence', 'Boat Club Road', '₹14.2 Cr', '5,500 SQFT', 'New Build', '919876543210', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811')"></div>
+            <div class="card-body"><h3>Boat Club Residence</h3><p>Elite Villa</p></div>
+        </div>
+        <div class="card" onclick="openPop('The Legacy Manor', 'Poes Garden', '₹19.5 Cr', '6,200 SQFT', 'Heritage Restored', '919876543211', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750')"></div>
+            <div class="card-body"><h3>Poes Garden Manor</h3><p>Legacy Estate</p></div>
+        </div>
+        <div class="card" onclick="openPop('Azure Penthouse', 'Besant Nagar', '₹4.8 Cr', '3,400 SQFT', '2 Years', '919876543212', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"></div>
+            <div class="card-body"><h3>Azure Penthouse</h3><p>Sea View Luxury</p></div>
+        </div>
+        <div class="card" onclick="openPop('The Coral Villa', 'Kanathur, ECR', '₹7.2 Cr', '4,800 SQFT', 'Under Construction', '919876543213', 'https://images.unsplash.com/photo-1512918766775-d56aabc28644')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512918766775-d56aabc28644')"></div>
+            <div class="card-body"><h3>The Coral Villa</h3><p>Beach Corridor</p></div>
+        </div>
+        <div class="card" onclick="openPop('Central Park Plot', 'Anna Nagar W', '₹5.5 Cr', '4,200 SQFT', 'Vacant Plot', '919876543214', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef')"></div>
+            <div class="card-body"><h3>Central Park Plot</h3><p>Prime Residential</p></div>
+        </div>
+        <div class="card" onclick="openPop('The Kapali Heritage', 'Mylapore', '₹8.9 Cr', '3,800 SQFT', '70 Years (Modernized)', '919876543215', 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6')"></div>
+            <div class="card-body"><h3>The Kapali Heritage</h3><p>Traditional Luxury</p></div>
         </div>
     </section>
 
+    <div id="propModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePop()">&times;</span>
+            <div id="mImg" style="height: 350px; background-size: cover; background-position: center;"></div>
+            <div class="modal-grid">
+                <div>
+                    <h2 id="mName" style="color: var(--gold); font-size: 2rem;">Name</h2>
+                    <p id="mLoc" style="opacity: 0.6; letter-spacing: 2px;">Location</p>
+                    <p id="mPrice" style="font-size: 1.8rem; font-weight: 700; margin: 20px 0;">Price</p>
+                    <div class="detail-tag"><strong>SQ FEET:</strong> <span id="mSqft"></span></div>
+                    <div class="detail-tag"><strong>AGE:</strong> <span id="mAge"></span></div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 30px; border: 1px solid var(--glass-border);">
+                    <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--gold);">PROCEDURE</h3>
+                    <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">1. Legal Clearance<br>2. Token Advance<br>3. Sale Agreement<br>4. Registration</p>
+                    <a id="mWa" href="#" class="btn-audi" style="display: block; text-align: center; margin-top: 30px; background: var(--whatsapp); color: #fff; border: none;">WhatsApp Owner</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPop(name, loc, price, sqft, age, wa, img) {
+            document.getElementById('propModal').style.display = 'flex';
+            document.getElementById('mName').innerText = name;
+            document.getElementById('mLoc').innerText = loc;
+            document.getElementById('mPrice').innerText = price;
+            document.getElementById('mSqft').innerText = sqft;
+            document.getElementById('mAge').innerText = age;
+            document.getElementById('mImg').style.backgroundImage = "url('"+img+"')";
+            document.getElementById('mWa').href = "https://wa.me/"+wa+"?text=Interested in "+name;
+            document.body.style.overflow = 'hidden';
+        }
+        function closePop() { document.getElementById('propModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+    </script>
 </body>
 </html>
