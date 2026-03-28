@@ -1,93 +1,177 @@
+/* CHENNNAI PRIME - GLOBAL STYLES 2025 
+   Theme: Audi-Inspired Dark Luxury & Glassmorphism
+*/
+
 :root {
-    --bg: #0a0a0a;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --accent: #ffffff;
+    --bg: #0a0a0a;             /* Pure Obsidian Black */
+    --card-bg: rgba(255, 255, 255, 0.03); 
+    --accent: #ffffff;         /* Audi Silver/White */
     --text-dim: #a0a0a0;
-    --glass: rgba(255, 255, 20, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --gold: #d4af37;           /* For Luxury Tags */
+    --blue: #00a8ff;           /* For Modern/IT Tags */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: #fff;
-    scroll-behavior: smooth;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism Nav */
+/* --- NAVIGATION --- */
 .glass-nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 5%;
+    padding: 20px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(15px);
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px); /* The "Glossy" Finish */
+    -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.logo { font-weight: 700; letter-spacing: 2px; }
+.logo { 
+    font-weight: 700; 
+    letter-spacing: 4px; 
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
 .logo span { color: var(--text-dim); font-weight: 300; }
 
-/* Hero Section */
-.hero {
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.nav-links a:hover { opacity: 1; }
+
+/* --- HERO SECTIONS --- */
+.hero, .hero-sub {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg)),
-                url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
+.hero-sub { height: 65vh; justify-content: flex-start; text-align: left; padding: 0 10%; }
+
+.hero-content { max-width: 800px; z-index: 2; }
+.hero-content h1 { 
+    font-size: clamp(2.5rem, 8vw, 5rem); 
+    font-weight: 700; 
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+/* --- BUTTONS --- */
 .btn-audi {
-    padding: 15px 40px;
+    display: inline-block;
+    padding: 18px 45px;
     background: #fff;
     color: #000;
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.4s;
+    letter-spacing: 2px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid #fff;
 }
 
 .btn-audi:hover {
     background: transparent;
     color: #fff;
-    box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    border: 1px solid #fff;
+    box-shadow: 0 0 30px rgba(255,255,255,0.2);
 }
 
-/* Property Cards */
-.card {
+/* --- PROPERTY CARDS --- */
+.grid, .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 80px 6%;
+}
+
+.card, .info-card {
     background: var(--card-bg);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 0px; /* Audi style is often sharp/rectilinear */
-    overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-12px);
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.06);
 }
 
-.card-img { height: 250px; background-size: cover; }
+.card-img { height: 300px; background-size: cover; background-position: center; }
+.card-body, .info-card { padding: 40px; }
 
-/* Scroll Animations */
+/* --- TAGS & LISTS --- */
+.tag, .tag-gold, .tag-blue {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+.tag-gold { color: var(--gold); }
+.tag-blue { color: var(--blue); }
+
+.luxury-list { list-style: none; margin-top: 20px; }
+.luxury-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* --- 2025 SCROLL ANIMATIONS --- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- MAP STYLING --- */
+#map {
+    margin: 40px 6%;
+    height: 500px;
+    border: 1px solid var(--glass-border);
+    filter: grayscale(1) invert(0.9) contrast(1.2); /* Dark Map Look */
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Simplify for mobile */
+    .hero-content h1 { font-size: 3rem; }
+    .grid { padding: 40px 5%; }
 }
