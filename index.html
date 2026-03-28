@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- CSS ENGINE --- */
         :root {
             --bg: #0a0a0a;
             --card-bg: rgba(255, 255, 255, 0.03); 
@@ -20,31 +19,35 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body { 
             font-family: 'Inter', sans-serif; 
-            background: var(--bg); 
+            background-color: var(--bg); 
             color: #fff; 
             line-height: 1.6; 
-            overflow-x: hidden; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        /* --- NAVIGATION --- */
         .glass-nav {
             position: fixed; top: 0; width: 100%; padding: 20px 6%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(20px);
-            z-index: 1000; border-bottom: 1px solid var(--glass-border);
+            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
         }
         .logo { font-weight: 700; letter-spacing: 4px; text-transform: uppercase; font-size: 1.1rem; }
         .logo span { color: var(--text-dim); font-weight: 300; }
 
-        /* Hero Section */
+        /* --- HERO --- */
         .hero { 
             height: 100vh; display: flex; align-items: center; justify-content: center; 
             text-align: center; background-size: cover; background-position: center;
             background-image: linear-gradient(rgba(0,0,0,0.7), #0a0a0a), 
             url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1600');
         }
+        .hero-content h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; }
 
         .btn-audi {
             display: inline-block; padding: 18px 45px; background: #fff; color: #000;
@@ -53,7 +56,7 @@
         }
         .btn-audi:hover { background: transparent; color: #fff; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
 
-        /* Property Grid */
+        /* --- GRID --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 100px 6%; }
         .card { 
             background: var(--card-bg); border: 1px solid var(--glass-border); 
@@ -63,27 +66,26 @@
         .card-img { height: 280px; background-size: cover; background-position: center; }
         .card-body { padding: 30px; }
 
-        /* Modal (The Attractive Pop-up) */
+        /* --- ATTRACTIVE POP-UP --- */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(25px);
             display: none; justify-content: center; align-items: center; z-index: 9999;
         }
         .modal-content {
-            background: #0f0f0f; width: 95%; max-width: 1000px; max-height: 90vh;
+            background: #111; width: 95%; max-width: 1000px; max-height: 90vh;
             overflow-y: auto; position: relative; border: 1px solid var(--glass-border);
             animation: modalSlide 0.4s ease-out;
         }
-        @keyframes modalSlide { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes modalSlide { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         
         .close-modal { position: absolute; top: 20px; right: 30px; font-size: 2.5rem; cursor: pointer; color: var(--gold); z-index: 10; }
         .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px; }
         .detail-tag { background: rgba(255,255,255,0.05); padding: 15px; border-left: 3px solid var(--gold); margin-bottom: 10px; }
-
-        /* Utility */
-        .tag-gold { color: var(--gold); font-size: 0.7rem; letter-spacing: 3px; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; }
         
-        @media (max-width: 768px) { .modal-grid { grid-template-columns: 1fr; } }
+        .tag-gold { color: var(--gold); font-size: 0.7rem; letter-spacing: 3px; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; }
+
+        @media (max-width: 768px) { .modal-grid { grid-template-columns: 1fr; } .hero-content h1 { font-size: 3rem; } }
     </style>
 </head>
 <body>
@@ -92,34 +94,44 @@
         <div class="logo">SOUNDERAMOORTHY<span> ESTATES</span></div>
     </nav>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <span class="tag-gold">ESTABLISHED 2026</span>
-            <h1 style="font-size: clamp(2.5rem, 8vw, 4.5rem); letter-spacing: -2px;">Chennai's Gold Standard.</h1>
-            <p style="color: var(--text-dim); margin-bottom: 30px;">Exclusive Assets for the Discerning Investor.</p>
-            <a href="#collection" class="btn-audi">View Collection</a>
+            <span class="tag-gold">PREMIUM REALTY 2026</span>
+            <h1>Chennai's Most Exclusive.</h1>
+            <p style="color: var(--text-dim); margin-bottom: 40px;">Luxury Land, Heritage Villas, and High-Yield Plots.</p>
+            <a href="#collection" class="btn-audi">Explore Collection</a>
         </div>
     </section>
 
     <section class="grid" id="collection">
-        <div class="card" onclick="openPop('Adyar Gate Residence', 'Boat Club Road', '₹14.2 Cr', '5,500 SQFT', 'New Build', '919876543210', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811')">
+        <div class="card" onclick="openPop('The Adyar Gate Estate', 'Boat Club Road', '₹14.5 Cr', '5,800 SQFT', 'New Build', '919000000000', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811')"></div>
-            <div class="card-body"><h3>Boat Club Residence</h3><p>Elite Villa</p></div>
+            <div class="card-body"><span class="tag-gold">VILLA</span><h3>Boat Club Residence</h3><p>Elite Neighborhood</p></div>
         </div>
 
-        <div class="card" onclick="openPop('The Legacy Manor', 'Poes Garden', '₹19.5 Cr', '6,200 SQFT', 'Heritage Restored', '919876543211', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750')">
+        <div class="card" onclick="openPop('Legacy Manor', 'Poes Garden', '₹19.0 Cr', '6,500 SQFT', 'Heritage Restored', '919000000000', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750')"></div>
-            <div class="card-body"><h3>Poes Garden Manor</h3><p>Legacy Estate</p></div>
+            <div class="card-body"><span class="tag-gold">ESTATE</span><h3>Poes Garden Manor</h3><p>Ultra-Premium</p></div>
         </div>
 
-        <div class="card" onclick="openPop('Azure Penthouse', 'Besant Nagar', '₹4.8 Cr', '3,400 SQFT', '2 Years', '919876543212', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
+        <div class="card" onclick="openPop('Azure Shoreline', 'Besant Nagar', '₹4.2 Cr', '3,200 SQFT', '3 Years', '919000000000', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"></div>
-            <div class="card-body"><h3>Azure Penthouse</h3><p>Sea View Luxury</p></div>
+            <div class="card-body"><span class="tag-gold">PENTHOUSE</span><h3>Azure Shoreline</h3><p>Sea Facing Luxury</p></div>
         </div>
 
-        <div class="card" onclick="openPop('The Coral Villa', 'Kanathur, ECR', '₹7.2 Cr', '4,800 SQFT', 'Under Construction', '919876543213', 'https://images.unsplash.com/photo-1512918766775-d56aabc28644')">
+        <div class="card" onclick="openPop('The Coral Villa', 'Kanathur, ECR', '₹6.8 Cr', '4,500 SQFT', 'Under Construction', '919000000000', 'https://images.unsplash.com/photo-1512918766775-d56aabc28644')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512918766775-d56aabc28644')"></div>
-            <div class="card-body"><h3>The Coral Villa</h3><p>Beach Corridor</p></div>
+            <div class="card-body"><span class="tag-gold">BEACH HOUSE</span><h3>The Coral Villa</h3><p>Scenic Corridor</p></div>
+        </div>
+
+        <div class="card" onclick="openPop('Central Park Plot', 'Anna Nagar West', '₹5.2 Cr', '4,200 SQFT', 'Vacant Plot', '919000000000', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef')"></div>
+            <div class="card-body"><span class="tag-gold">LAND</span><h3>Anna Nagar Plot</h3><p>Prime Residential</p></div>
+        </div>
+
+        <div class="card" onclick="openPop('Temple View Heritage', 'Mylapore', '₹8.5 Cr', '3,600 SQFT', 'Restored Heritage', '919000000000', 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6')"></div>
+            <div class="card-body"><span class="tag-gold">HERITAGE</span><h3>Mylapore Bungalow</h3><p>Traditional Luxury</p></div>
         </div>
     </section>
 
@@ -129,28 +141,28 @@
             <div id="mImg" style="height: 350px; background-size: cover; background-position: center;"></div>
             <div class="modal-grid">
                 <div>
-                    <h2 id="mName" style="color: var(--gold); font-size: 2rem;">Name</h2>
-                    <p id="mLoc" style="opacity: 0.6; letter-spacing: 2px;">Location</p>
-                    <p id="mPrice" style="font-size: 1.8rem; font-weight: 700; margin: 20px 0;">Price</p>
-                    <div class="detail-tag"><strong>SQ FEET:</strong> <span id="mSqft"></span></div>
-                    <div class="detail-tag"><strong>AGE:</strong> <span id="mAge"></span></div>
+                    <h2 id="mName" style="color: var(--gold); font-size: 2rem; margin-bottom: 5px;">Name</h2>
+                    <p id="mLoc" style="opacity: 0.6; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Location</p>
+                    <p id="mPrice" style="font-size: 2rem; font-weight: 700; margin: 20px 0; color: #fff;">Price</p>
+                    <div class="detail-tag"><strong>DIMENSIONS:</strong> <span id="mSqft"></span></div>
+                    <div class="detail-tag"><strong>PROPERTY AGE:</strong> <span id="mAge"></span></div>
+                    <div class="detail-tag"><strong>DOCUMENTATION:</strong> Clear Title / Patta Verified</div>
                 </div>
                 <div style="background: rgba(255,255,255,0.02); padding: 30px; border: 1px solid var(--glass-border);">
-                    <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--gold);">PROCEDURE</h3>
-                    <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">
-                        1. Legal Verification of Patta/EC<br>
-                        2. Site Visit & Valuation<br>
-                        3. Draft Sale Agreement<br>
-                        4. Final Registration
+                    <h3 style="font-size: 0.9rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 15px;">ACQUISITION PROCESS</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-dim); line-height: 1.8;">
+                        1. Physical Site Inspection<br>
+                        2. Legal Due Diligence (EC/Patta)<br>
+                        3. Draft Sale Agreement (ATS)<br>
+                        4. Final Registration at Sub-Registrar
                     </p>
-                    <a id="mWa" href="#" target="_blank" class="btn-audi" style="display: block; text-align: center; margin-top: 30px; background: var(--whatsapp); color: #fff; border: none;">WhatsApp Agent</a>
+                    <a id="mWa" href="#" target="_blank" class="btn-audi" style="display: block; text-align: center; margin-top: 30px; background: var(--whatsapp); color: #fff; border: none;">Inquire via WhatsApp</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        /* --- JS ENGINE --- */
         function openPop(name, loc, price, sqft, age, wa, img) {
             document.getElementById('propModal').style.display = 'flex';
             document.getElementById('mName').innerText = name;
@@ -159,7 +171,8 @@
             document.getElementById('mSqft').innerText = sqft;
             document.getElementById('mAge').innerText = age;
             document.getElementById('mImg').style.backgroundImage = "url('"+img+"')";
-            document.getElementById('mWa').href = "https://wa.me/"+wa+"?text=I am interested in the " + name + " property.";
+            // Pre-filled WhatsApp message
+            document.getElementById('mWa').href = "https://wa.me/"+wa+"?text=I am interested in the " + name + " property at " + loc;
             document.body.style.overflow = 'hidden';
         }
 
@@ -168,11 +181,8 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close when clicking outside content
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('propModal')) {
-                closePop();
-            }
+        window.onclick = function(e) {
+            if (e.target == document.getElementById('propModal')) closePop();
         }
     </script>
 </body>
