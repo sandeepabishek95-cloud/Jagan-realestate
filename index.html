@@ -3,16 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chennai Properties</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<title>Soundaramoorthy Real Estates Chennai Pvt Limited</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet Map CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
 </head>
 <body>
 
 <nav class="navbar">
-  <div class="logo"><span>Chennai Realty</span></div>
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo">
+    <span>Soundaramoorthy Real Estates</span>
+  </div>
   <div class="nav-actions">
     <a href="tel:+917010022388" class="call-btn">📞</a>
     <a href="https://wa.me/917010022388" class="wa-btn">💬</a>
@@ -20,28 +26,28 @@
 </nav>
 
 <header class="hero">
-  <h1>Explore Premium Properties in Chennai</h1>
-  <p>Find your dream home or land with ease</p>
+  <h1>Premium Real Estate Listings in Chennai</h1>
+  <p>Find your dream property with ease</p>
 </header>
 
-<section class="section">
+<section class="section" id="properties">
   <h2>Available Properties</h2>
-  <div class="cards">
-    <a href="listing.html?prop=1" class="card">Luxury Villa - OMR</a>
-    <a href="listing.html?prop=2" class="card">Apartment - Anna Nagar</a>
-    <a href="listing.html?prop=3" class="card">Land Plot - Porur</a>
+  <div class="cards" id="property-cards">
+    <!-- JS will populate cards here -->
   </div>
 </section>
 
-<section class="section">
-  <h2>Learn More</h2>
-  <div class="cards">
-    <a href="blog.html" class="card highlight">Chennai & Indian Real Estate History</a>
-  </div>
+<section class="section" id="about">
+  <h2>About Chennai Real Estate</h2>
+  <p>Discover Chennai’s history of development, urban growth, and premium properties.</p>
+  <a href="blog.html" class="btn">Read More</a>
 </section>
 
 <a href="https://wa.me/917010022388" class="whatsapp-float">💬</a>
-<footer>© Chennai Realty</footer>
+
+<footer>© Soundaramoorthy Real Estates Chennai Pvt Limited</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
