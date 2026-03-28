@@ -3,110 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chennai Prime | Luxury Real Estate</title>
-    
+    <title>Sounderamoorthy Real Estate | Luxury Chennai</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
-
-    <meta property="og:title" content="Chennai Prime | Luxury Villas & Plots">
-    <meta property="og:description" content="Explore the most exclusive real estate listings in Chennai with Audi-inspired design.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1000">
 </head>
 <body class="dark-theme">
 
-    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </a>
-
     <nav class="glass-nav">
-        <div class="logo">CHENNAI<span>PRIME</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#listings">Listings</a></li>
-            <li><a href="locations/adyar.html">Heritage</a></li>
-            <li><a href="contact.html">Inquire</a></li>
-        </ul>
+        <div class="logo">SOUNDERAMOORTHY<span> ESTATES</span></div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content reveal active">
-            <span class="tag-gold">ESTABLISHED 2025</span>
-            <h1>The New Standard of Chennai Luxury.</h1>
-            <p>Exclusive Land, Villas, and Estates curated for the visionaries.</p>
-            <div style="margin-top: 30px;">
-                <a href="#listings" class="btn-audi">View Collection</a>
-            </div>
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), #0a0a0a), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200');">
+        <div class="hero-content">
+            <span style="letter-spacing: 5px; color: #d4af37;">PREMIUM ADVISORY</span>
+            <h1 style="font-size: 4rem; margin: 20px 0;">Curating Chennai's Finest.</h1>
+            <a href="gallery.html" class="btn-audi">Explore Collection</a>
         </div>
     </section>
 
-    <section id="listings" class="container">
-        <div style="padding: 60px 6% 0;">
-            <span class="tag-blue">FEATURED ADVERTISEMENTS</span>
-            <h2 style="font-size: 2.5rem; letter-spacing: -1px;">Current Opportunities</h2>
-        </div>
-
-        <div class="grid">
-            <div class="card reveal">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="card-body">
-                    <span class="tag-gold">VILLA · ECR</span>
-                    <h3>The Azure Coast Estate</h3>
-                    <p>Experience breathtaking sea views and ultra-modern architecture in the heart of East Coast Road.</p>
-                    <button class="btn-audi" style="padding: 12px 25px; font-size: 0.7rem;" onclick="showMap(12.848, 80.239)">View Location</button>
-                </div>
-            </div>
-
-            <div class="card reveal">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="card-body">
-                    <span class="tag-blue">LAND · OMR</span>
-                    <h3>Tech-Corridor Premium Plot</h3>
-                    <p>Strategically located near Tidel Park. Perfect for high-yield residential development.</p>
-                    <button class="btn-audi" style="padding: 12px 25px; font-size: 0.7rem;" onclick="showMap(12.947, 80.226)">View Location</button>
-                </div>
-            </div>
-
-            <div class="card reveal">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="card-body">
-                    <span class="tag-gold">HERITAGE · ADYAR</span>
-                    <h3>The Gandhi Nagar Bungalow</h3>
-                    <p>A rare piece of history. A classic sprawling estate in Chennai's most elite neighborhood.</p>
-                    <button class="btn-audi" style="padding: 12px 25px; font-size: 0.7rem;" onclick="showMap(13.006, 80.257)">View Location</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container reveal" style="padding: 80px 6%;">
-        <span class="tag-gold">CLIENT WHISPERS</span>
-        <h2 style="margin-bottom: 40px;">Trusted by Chennai's Elite</h2>
-        <div class="grid">
-            <div class="info-card">
-                <p style="font-style: italic; color: var(--text-dim); opacity: 0.8;">"The transparency and the map-first approach made finding our ECR villa effortless. Truly a premium experience."</p>
-                <h4 style="margin-top: 25px; letter-spacing: 2px; font-size: 0.8rem;">— DR. ARJUN R.</h4>
-            </div>
-            <div class="info-card">
-                <p style="font-style: italic; color: var(--text-dim); opacity: 0.8;">"Finally, a real estate portal that feels as modern as the properties it lists. The OMR tech-corridor data was spot on."</p>
-                <h4 style="margin-top: 25px; letter-spacing: 2px; font-size: 0.8rem;">— PRIYA KRISHNAN</h4>
-            </div>
-        </div>
-    </section>
-
-    <section class="reveal">
-        <div style="padding: 0 6%;">
-            <h3 style="margin-bottom: 20px; font-weight: 300;">Explore the Chennai Corridor</h3>
-        </div>
-        <div id="map"></div>
-    </section>
-
-    <footer style="padding: 60px 6%; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; opacity: 0.5; font-size: 0.8rem;">
-        <p>&copy; 2026 CHENNAI PRIME REAL ESTATE. DESIGNED FOR IPHONE 17.</p>
-    </footer>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
