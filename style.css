@@ -1,202 +1,63 @@
-/* CHENNNAI PRIME - GLOBAL STYLES 2025 
-   Theme: Audi-Inspired Dark Luxury & Glassmorphism
+/* SOUNDERAMOORTHY ESTATES - GLOBAL 2026 
+   Theme: Audi-Inspired Glossy Luxury
 */
 
 :root {
-    --bg: #0a0a0a;             /* Pure Obsidian Black */
+    --bg: #0a0a0a;
     --card-bg: rgba(255, 255, 255, 0.03); 
-    --accent: #ffffff;         /* Audi Silver/White */
+    --accent: #ffffff;
     --text-dim: #a0a0a0;
     --glass-border: rgba(255, 255, 255, 0.1);
-    --gold: #d4af37;           /* For Luxury Tags */
-    --blue: #00a8ff;           /* For Modern/IT Tags */
-    --whatsapp: #25d366;       /* Official WhatsApp Green */
+    --gold: #d4af37;
+    --blue: #00a8ff;
+    --whatsapp: #25d366;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
-    color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* --- NAVIGATION --- */
+/* NAVIGATION */
 .glass-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    z-index: 1000;
+    position: fixed; top: 0; width: 100%; padding: 20px 6%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(20px); z-index: 1000;
     border-bottom: 1px solid var(--glass-border);
 }
-
-.logo { 
-    font-weight: 700; 
-    letter-spacing: 4px; 
-    font-size: 1.2rem;
-    text-transform: uppercase;
-}
+.logo { font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
 .logo span { color: var(--text-dim); font-weight: 300; }
 
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { 
-    color: #fff; 
-    text-decoration: none; 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-    opacity: 0.7;
-    transition: 0.3s;
+/* HERO */
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; background-size: cover; background-position: center;
 }
-.nav-links a:hover { opacity: 1; }
-
-/* --- HERO SECTIONS --- */
-.hero, .hero-sub {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero-sub { height: 65vh; justify-content: flex-start; text-align: left; padding: 0 10%; }
-
-.hero-content { max-width: 800px; z-index: 2; }
-.hero-content h1 { 
-    font-size: clamp(2.5rem, 8vw, 5rem); 
-    font-weight: 700; 
-    margin-bottom: 20px;
-    letter-spacing: -2px;
-}
-
-/* --- BUTTONS --- */
 .btn-audi {
-    display: inline-block;
-    padding: 18px 45px;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    border: 1px solid #fff;
-    cursor: pointer;
+    display: inline-block; padding: 18px 45px; background: #fff; color: #000;
+    text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); border: 1px solid #fff; cursor: pointer;
 }
+.btn-audi:hover { background: transparent; color: #fff; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
 
-.btn-audi:hover {
-    background: transparent;
-    color: #fff;
-    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+/* GALLERY GRID */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 80px 6%; }
+.card { background: var(--card-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); transition: 0.6s; }
+.card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.4); }
+.card-img { height: 250px; background-size: cover; background-position: center; }
+.card-body { padding: 30px; }
+
+/* PROPERTY POP-UP (MODAL) */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
+    display: none; justify-content: center; align-items: center; z-index: 3000;
 }
-
-/* --- PROPERTY CARDS --- */
-.grid, .content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 80px 6%;
+.modal-content {
+    background: #111; width: 90%; max-width: 900px; max-height: 90vh;
+    overflow-y: auto; position: relative; border: 1px solid var(--glass-border);
 }
+.close-modal { position: absolute; top: 20px; right: 20px; font-size: 2rem; cursor: pointer; color: var(--gold); }
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 40px; }
+.detail-tag { background: rgba(255,255,255,0.05); padding: 15px; border-left: 2px solid var(--gold); }
 
-.card, .info-card {
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.card:hover {
-    transform: translateY(-12px);
-    border-color: rgba(255,255,255,0.4);
-    background: rgba(255,255,255,0.06);
-}
-
-.card-img { height: 300px; background-size: cover; background-position: center; }
-.card-body, .info-card { padding: 40px; }
-
-/* --- TAGS & LISTS --- */
-.tag, .tag-gold, .tag-blue {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 15px;
-}
-.tag-gold { color: var(--gold); }
-.tag-blue { color: var(--blue); }
-
-.luxury-list { list-style: none; margin-top: 20px; }
-.luxury-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 0.9rem;
-    color: var(--text-dim);
-}
-
-/* --- WHATSAPP FLOATING BUTTON --- */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--whatsapp);
-    color: #fff;
-    border-radius: 50px;
-    width: 60px;
-    height: 60px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1) translateY(-5px);
-}
-
-/* --- 2025 SCROLL ANIMATIONS --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- MAP STYLING --- */
-#map {
-    margin: 40px 6%;
-    height: 500px;
-    border: 1px solid var(--glass-border);
-    filter: grayscale(1) invert(0.9) contrast(1.2); 
-}
-
-/* --- MOBILE OPTIMIZATION --- */
-@media (max-width: 768px) {
-    .nav-links { display: none; } 
-    .hero-content h1 { font-size: 3rem; }
-    .grid { padding: 40px 5%; }
-    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-}
+/* RESPONSIVE */
+@media (max-width: 768px) { .modal-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } }
