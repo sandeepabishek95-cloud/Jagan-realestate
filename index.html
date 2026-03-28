@@ -3,44 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Portfolio | Sounderamoorthy Real Estate</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sounderamoorthy Real Estate | Chennai Luxury</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS ENGINE --- */
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.03); 
+            --accent: #ffffff;
+            --text-dim: #a0a0a0;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gold: #d4af37;
+            --whatsapp: #25d366;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg); 
+            color: #fff; 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
+
+        /* Navigation */
+        .glass-nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 6%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(20px);
+            z-index: 1000; border-bottom: 1px solid var(--glass-border);
+        }
+        .logo { font-weight: 700; letter-spacing: 4px; text-transform: uppercase; font-size: 1.1rem; }
+        .logo span { color: var(--text-dim); font-weight: 300; }
+
+        /* Hero Section */
+        .hero { 
+            height: 100vh; display: flex; align-items: center; justify-content: center; 
+            text-align: center; background-size: cover; background-position: center;
+            background-image: linear-gradient(rgba(0,0,0,0.7), #0a0a0a), 
+            url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1600');
+        }
+
+        .btn-audi {
+            display: inline-block; padding: 18px 45px; background: #fff; color: #000;
+            text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+            transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); border: 1px solid #fff; cursor: pointer;
+        }
+        .btn-audi:hover { background: transparent; color: #fff; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+
+        /* Property Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 100px 6%; }
+        .card { 
+            background: var(--card-bg); border: 1px solid var(--glass-border); 
+            backdrop-filter: blur(10px); transition: 0.6s; cursor: pointer; 
+        }
+        .card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.4); }
+        .card-img { height: 280px; background-size: cover; background-position: center; }
+        .card-body { padding: 30px; }
+
+        /* Modal (The Attractive Pop-up) */
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
+            display: none; justify-content: center; align-items: center; z-index: 9999;
+        }
+        .modal-content {
+            background: #0f0f0f; width: 95%; max-width: 1000px; max-height: 90vh;
+            overflow-y: auto; position: relative; border: 1px solid var(--glass-border);
+            animation: modalSlide 0.4s ease-out;
+        }
+        @keyframes modalSlide { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        
+        .close-modal { position: absolute; top: 20px; right: 30px; font-size: 2.5rem; cursor: pointer; color: var(--gold); z-index: 10; }
+        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px; }
+        .detail-tag { background: rgba(255,255,255,0.05); padding: 15px; border-left: 3px solid var(--gold); margin-bottom: 10px; }
+
+        /* Utility */
+        .tag-gold { color: var(--gold); font-size: 0.7rem; letter-spacing: 3px; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        
+        @media (max-width: 768px) { .modal-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
+
     <nav class="glass-nav">
         <div class="logo">SOUNDERAMOORTHY<span> ESTATES</span></div>
-        <a href="index.html" class="btn-back">← HOME</a>
     </nav>
 
-    <header style="padding: 140px 6% 20px;">
-        <span class="tag-gold">PRIVATE INVENTORY</span>
-        <h2 style="font-size: 2.5rem; letter-spacing: -1px;">The 2026 Collection</h2>
-    </header>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag-gold">ESTABLISHED 2026</span>
+            <h1 style="font-size: clamp(2.5rem, 8vw, 4.5rem); letter-spacing: -2px;">Chennai's Gold Standard.</h1>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Exclusive Assets for the Discerning Investor.</p>
+            <a href="#collection" class="btn-audi">View Collection</a>
+        </div>
+    </section>
 
-    <section class="grid">
+    <section class="grid" id="collection">
         <div class="card" onclick="openPop('Adyar Gate Residence', 'Boat Club Road', '₹14.2 Cr', '5,500 SQFT', 'New Build', '919876543210', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811')"></div>
             <div class="card-body"><h3>Boat Club Residence</h3><p>Elite Villa</p></div>
         </div>
+
         <div class="card" onclick="openPop('The Legacy Manor', 'Poes Garden', '₹19.5 Cr', '6,200 SQFT', 'Heritage Restored', '919876543211', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750')"></div>
             <div class="card-body"><h3>Poes Garden Manor</h3><p>Legacy Estate</p></div>
         </div>
+
         <div class="card" onclick="openPop('Azure Penthouse', 'Besant Nagar', '₹4.8 Cr', '3,400 SQFT', '2 Years', '919876543212', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"></div>
             <div class="card-body"><h3>Azure Penthouse</h3><p>Sea View Luxury</p></div>
         </div>
+
         <div class="card" onclick="openPop('The Coral Villa', 'Kanathur, ECR', '₹7.2 Cr', '4,800 SQFT', 'Under Construction', '919876543213', 'https://images.unsplash.com/photo-1512918766775-d56aabc28644')">
             <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512918766775-d56aabc28644')"></div>
             <div class="card-body"><h3>The Coral Villa</h3><p>Beach Corridor</p></div>
-        </div>
-        <div class="card" onclick="openPop('Central Park Plot', 'Anna Nagar W', '₹5.5 Cr', '4,200 SQFT', 'Vacant Plot', '919876543214', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef')">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef')"></div>
-            <div class="card-body"><h3>Central Park Plot</h3><p>Prime Residential</p></div>
-        </div>
-        <div class="card" onclick="openPop('The Kapali Heritage', 'Mylapore', '₹8.9 Cr', '3,800 SQFT', '70 Years (Modernized)', '919876543215', 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6')">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6')"></div>
-            <div class="card-body"><h3>The Kapali Heritage</h3><p>Traditional Luxury</p></div>
         </div>
     </section>
 
@@ -58,14 +137,20 @@
                 </div>
                 <div style="background: rgba(255,255,255,0.02); padding: 30px; border: 1px solid var(--glass-border);">
                     <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--gold);">PROCEDURE</h3>
-                    <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">1. Legal Clearance<br>2. Token Advance<br>3. Sale Agreement<br>4. Registration</p>
-                    <a id="mWa" href="#" class="btn-audi" style="display: block; text-align: center; margin-top: 30px; background: var(--whatsapp); color: #fff; border: none;">WhatsApp Owner</a>
+                    <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">
+                        1. Legal Verification of Patta/EC<br>
+                        2. Site Visit & Valuation<br>
+                        3. Draft Sale Agreement<br>
+                        4. Final Registration
+                    </p>
+                    <a id="mWa" href="#" target="_blank" class="btn-audi" style="display: block; text-align: center; margin-top: 30px; background: var(--whatsapp); color: #fff; border: none;">WhatsApp Agent</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        /* --- JS ENGINE --- */
         function openPop(name, loc, price, sqft, age, wa, img) {
             document.getElementById('propModal').style.display = 'flex';
             document.getElementById('mName').innerText = name;
@@ -74,10 +159,21 @@
             document.getElementById('mSqft').innerText = sqft;
             document.getElementById('mAge').innerText = age;
             document.getElementById('mImg').style.backgroundImage = "url('"+img+"')";
-            document.getElementById('mWa').href = "https://wa.me/"+wa+"?text=Interested in "+name;
+            document.getElementById('mWa').href = "https://wa.me/"+wa+"?text=I am interested in the " + name + " property.";
             document.body.style.overflow = 'hidden';
         }
-        function closePop() { document.getElementById('propModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+
+        function closePop() {
+            document.getElementById('propModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close when clicking outside content
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('propModal')) {
+                closePop();
+            }
+        }
     </script>
 </body>
 </html>
