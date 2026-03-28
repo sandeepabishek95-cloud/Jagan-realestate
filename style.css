@@ -10,6 +10,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --gold: #d4af37;           /* For Luxury Tags */
     --blue: #00a8ff;           /* For Modern/IT Tags */
+    --whatsapp: #25d366;       /* Official WhatsApp Green */
 }
 
 * {
@@ -37,7 +38,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(20px); /* The "Glossy" Finish */
+    backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
     border-bottom: 1px solid var(--glass-border);
@@ -97,6 +98,7 @@ body {
     letter-spacing: 2px;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     border: 1px solid #fff;
+    cursor: pointer;
 }
 
 .btn-audi:hover {
@@ -149,6 +151,28 @@ body {
     color: var(--text-dim);
 }
 
+/* --- WHATSAPP FLOATING BUTTON --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--whatsapp);
+    color: #fff;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
 /* --- 2025 SCROLL ANIMATIONS --- */
 .reveal {
     opacity: 0;
@@ -166,12 +190,13 @@ body {
     margin: 40px 6%;
     height: 500px;
     border: 1px solid var(--glass-border);
-    filter: grayscale(1) invert(0.9) contrast(1.2); /* Dark Map Look */
+    filter: grayscale(1) invert(0.9) contrast(1.2); 
 }
 
 /* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Simplify for mobile */
+    .nav-links { display: none; } 
     .hero-content h1 { font-size: 3rem; }
     .grid { padding: 40px 5%; }
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
 }
